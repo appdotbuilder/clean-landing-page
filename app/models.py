@@ -207,9 +207,15 @@ class HeroSectionCreate(SQLModel, table=False):
     subheadline: Optional[str] = Field(default=None, max_length=500)
     description: Optional[str] = Field(default=None, max_length=1000)
     background_image_url: Optional[str] = Field(default=None, max_length=500)
+    background_color: Optional[str] = Field(default=None, max_length=50)
+    text_color: Optional[str] = Field(default=None, max_length=50)
     primary_button_text: Optional[str] = Field(default=None, max_length=100)
     primary_button_url: Optional[str] = Field(default=None, max_length=500)
+    secondary_button_text: Optional[str] = Field(default=None, max_length=100)
+    secondary_button_url: Optional[str] = Field(default=None, max_length=500)
     alignment: str = Field(default="center", max_length=20)
+    height: str = Field(default="full", max_length=20)
+    display_order: int = Field(default=0)
 
 
 class FeatureCreate(SQLModel, table=False):
@@ -219,9 +225,13 @@ class FeatureCreate(SQLModel, table=False):
     title: str = Field(max_length=200)
     description: str = Field(max_length=1000)
     icon: Optional[str] = Field(default=None, max_length=100)
+    icon_color: Optional[str] = Field(default=None, max_length=50)
     image_url: Optional[str] = Field(default=None, max_length=500)
     link_text: Optional[str] = Field(default=None, max_length=100)
     link_url: Optional[str] = Field(default=None, max_length=500)
+    background_color: Optional[str] = Field(default=None, max_length=50)
+    text_color: Optional[str] = Field(default=None, max_length=50)
+    display_order: int = Field(default=0)
     is_featured: bool = Field(default=False)
 
 
@@ -234,9 +244,16 @@ class CallToActionSectionCreate(SQLModel, table=False):
     description: Optional[str] = Field(default=None, max_length=1000)
     primary_button_text: str = Field(max_length=100)
     primary_button_url: str = Field(max_length=500)
+    primary_button_style: str = Field(default="primary", max_length=50)
     secondary_button_text: Optional[str] = Field(default=None, max_length=100)
     secondary_button_url: Optional[str] = Field(default=None, max_length=500)
+    secondary_button_style: str = Field(default="secondary", max_length=50)
+    background_color: Optional[str] = Field(default=None, max_length=50)
+    text_color: Optional[str] = Field(default=None, max_length=50)
+    background_image_url: Optional[str] = Field(default=None, max_length=500)
     alignment: str = Field(default="center", max_length=20)
+    size: str = Field(default="medium", max_length=20)
+    display_order: int = Field(default=0)
 
 
 class LandingPageThemeCreate(SQLModel, table=False):
